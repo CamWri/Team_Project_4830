@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<body>
+
+<div class = "topnav">
+  <a href = "/">HOME</a>
+  |
+  <a href = "/users">USERS</a>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
