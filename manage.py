@@ -3,6 +3,12 @@
 #How to activate virtual enviornment
 # source venv/bin/activate
 
+#Way to clear/empty and migrations and admin stuff
+#rm -rf users/migrations/*            
+#rm db.sqlite3
+#python manage.py makemigrations
+#python manage.py migrate
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

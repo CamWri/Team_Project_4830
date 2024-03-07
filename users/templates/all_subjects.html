@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  List of all subjects
+{% endblock %}
+
+
+{% block content %}
+  <div class="mycard">
+  <h1>Subjects</h1>
+    <ul>
+      {% for x in subject %}
+        <li onclick = "window.location = '{{ x.subject }}'"><a href="details/{{ x.subject }}">{{ x.subject }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
