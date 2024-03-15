@@ -10,7 +10,7 @@
   <h1>Users</h1>
     <ul>
       {% for x in myusers %}
-        <li onclick = "window.location = 'details/{{ x.id }}'"><a href="details/{{ x.id }}">{{ x.firstName }} {{ x.lastName }}</li>
+        <li onclick = "window.location = 'userDetails/{{ x.id }}'"><a href="userDetails/{{ x.id }}">{{ x.firstName }} {{ x.lastName }}</li>
       {% endfor %}
     </ul>
   </div>

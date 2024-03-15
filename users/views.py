@@ -2,6 +2,10 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import User
 from .models import CoreSubject
+from .models import Course
+
+from django.shortcuts import get_object_or_404
+
 
 def users(request):
     myusers = User.objects.all().values()
@@ -21,22 +25,44 @@ def userDetails(request, id):
 
     return HttpResponse(template.render(context, request))
 
-def subjectDetails(request, course_name):
-    subject = CoreSubject.objects.get(course_name = course_name)
-    template = loader.get_template('subject_details.html')
+def subjectDetails(request, subject):
+    # Retrieve the CoreSubject instance for the given subject
+    core_subject = CoreSubject.objects.get(subject=subject)
+
+    # Retrieve all courses associated with the CoreSubject
+    courses = core_subject.courses.all()
+
+    template = loader.get_template('subjects_details.html')
     context = {
-        'subject' : subject,
+        'subject': core_subject,
+        'courses': courses,
     }
 
     return HttpResponse(template.render(context, request))
 
+
 def subjects(request):
-    subject = CoreSubject.objects.all().values()
+    mysubjects = CoreSubject.objects.all().values()
     template = loader.get_template('all_subjects.html')
     context = {
-        'subject' : subject,
+        'mysubjects' : mysubjects,
     }
 
+    return HttpResponse(template.render(context, request))
+
+def courseDetails(request, subject, course_name):
+    # Retrieve the Course instance for the given subject and course name
+    course = get_object_or_404(Course, course_name=course_name)
+
+    ticket_list = course.all_tickets.all()
+
+    template = loader.get_template('course.html')
+
+    context = {
+        'course': course,  # Pass the Course object instead of just the name
+        'ticket_list': ticket_list,
+    }
+    
     return HttpResponse(template.render(context, request))
 
 def main(request):
