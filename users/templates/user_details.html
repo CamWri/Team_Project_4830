@@ -8,9 +8,12 @@
 {% block content %}
   <div class = "mycard">
     <h1>{{ myuser.firstName }} {{ myuser.lastName }}</h1>
-    
+ 
+    <p>Username {{ myuser.username }}</p>
+    <p>Password : {{ myuser.password }}</p>
     <p>Phone {{ myuser.phone }}</p>
     <p>Email : {{ myuser.email }}</p>
+
     
   </div>
 {% endblock %}

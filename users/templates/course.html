@@ -21,15 +21,15 @@
         Description: {{ ticket.post_description}}
         <br>
         {% if ticket.pdf_file %}
-            File: <a href="{{ ticket.pdf_file.url }}" download>{{ ticket.pdf_file.name }}</a>
+            File: <a href="{{ ticket.pdf_file.pdf }}" download>{{ ticket.pdf_file }}</a>
             <br>
         {% endif %}
         {% if ticket.video_file %}
-            Video: {{ticket.video_file}}
-            <br>
+        Video: <iframe width="560" height="315" src="{{ ticket.video_file }}" frameborder="0" allowfullscreen>{{thicket.video_file}}</iframe>
+        <br>
         {% endif %}
         {% if ticket.video_website_address %}
-            Video URL: {{ticket.video_website_address}}
+            Video URL: <a href = "{{ticket.video_website_address}}">{{ticket.video_website_address}}</a>
         {% endif %}
 
       </li>
