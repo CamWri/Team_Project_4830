@@ -8,6 +8,7 @@ urlpatterns = [
     path('subjects/', views.subjects, name = 'subjects'),
     path('subjects/subjectDetails/<str:subject>', views.subjectDetails, name = "Subject Details"),
     path('subjects/subjectDetails/<str:subject>/<str:course_name>/', views.courseDetails, name='course_details'),
+    path('media/', views.courseDetails, name='course_details'),
     #get rid of this lines 6 and 7 eventually because we don't want them to see all users
 
     #I want a page where it is a list of all subjects(Core Subjects Page) where if clicked, it goes to a list of all possible
