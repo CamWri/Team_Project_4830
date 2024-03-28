@@ -21,8 +21,8 @@
         Description: {{ ticket.post_description}}
         <br>
         {% if ticket.pdf_file %}
-            File: <a href="{{ ticket.pdf_file.pdf }}" download>{{ ticket.pdf_file }}</a>
-            <br>
+          File: <a href="{{ ticket.pdf_file.url }}" download>{{ ticket.pdf_file.name }}</a>
+          <br>
         {% endif %}
         {% if ticket.video_file %}
         Video: <iframe width="560" height="315" src="{{ ticket.video_file }}" frameborder="0" allowfullscreen>{{thicket.video_file}}</iframe>

@@ -6,6 +6,7 @@ from .models import Course
 
 from django.shortcuts import get_object_or_404
 
+from django.core.files.storage import FileSystemStorage
 
 def users(request):
     myusers = User.objects.all().values()
@@ -64,6 +65,8 @@ def courseDetails(request, subject, course_name):
     }
     
     return HttpResponse(template.render(context, request))
+
+
 
 def main(request):
     template = loader.get_template('main.html')
