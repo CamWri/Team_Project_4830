@@ -5,6 +5,7 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 
+
 class User(models.Model):
     firstName = models.CharField('First Name', max_length=50)
     lastName = models.CharField('Last Name', max_length=50)
