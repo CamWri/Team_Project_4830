@@ -25,8 +25,10 @@
           <br>
         {% endif %}
         {% if ticket.video_file %}
-        Video: <iframe width="560" height="315" src="{{ ticket.video_file }}" frameborder="0" allowfullscreen>{{thicket.video_file}}</iframe>
-        <br>
+          <video width="560" height="315" controls>
+            <source src="{{ ticket.video_file.url }}" type="video/mp4">
+          </video>        
+          <br>
         {% endif %}
         {% if ticket.video_website_address %}
             Video URL: <a href = "{{ticket.video_website_address}}">{{ticket.video_website_address}}</a>
