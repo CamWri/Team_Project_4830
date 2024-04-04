@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
@@ -8,18 +7,24 @@
 <link rel="stylesheet" href="{% static 'myfirst.css' %}">
 <body>
 
-<div class = "topnav">
-  <a href = "/">HOME</a>
-  |
-  <a href = "/users">USERS</a>
-  |
-  <a href = "/subjects">SUBJECTS</a>
-  <!--
-    Things we want in the NAVBAR
-      -Account Page / Login Page
-      -Search Page
-      -Insertion Page
-  -->
+<div class="topnav">
+          <!-- Need to redo this page to create better user experience when logged on and not logged on-->
+          <a class="nav-item nav-link" id="home" href="/">Home</a>
+          |
+          <a class="nav-item nav-link" id="users" href="/users">Users</a>
+          |
+          <a class="nav-item nav-link" id="account" href="/account">Account</a>
+          |
+          <a class="nav-item nav-link" id="search" href="/search">Search</a>
+          |
+          <a class="nav-item nav-link" id="upload" href="/upload">Upload</a>
+          |
+          <a class="nav-item nav-link" id="subjects" href="/logout">Logout</a>
+          |
+          <a class="nav-item nav-link" id="login" href="/login">Login</a>
+          |
+          <a class="nav-item nav-link" id="signup" href="/signup">Sign up</a>
+        </div>
 </div>
 
 {% block content %}

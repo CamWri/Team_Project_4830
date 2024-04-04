@@ -10,10 +10,12 @@ body {
   color:#ffffff;
   padding:10px;
 }
+
 .topnav a:link, .topnav a:visited {
   text-decoration: none;
-  color: #ffffff; 
+  color: #ffffff;
 }
+
 .topnav a:hover, .topnav a:active {
   text-decoration: underline;
 }
