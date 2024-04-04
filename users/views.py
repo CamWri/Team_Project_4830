@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 from django.core.files.storage import FileSystemStorage
 
 def users(request):
-    myusers = User.objects.all().values()
+    myusers = User.objects.all().values() 
     template = loader.get_template('all_users.html')
     context = {
         'myusers': myusers,
@@ -17,14 +17,15 @@ def users(request):
 
     return HttpResponse(template.render(context, request))
 
+
 def userDetails(request, id):
     myuser = User.objects.get(id = id)
     template = loader.get_template('user_details.html')
     context = {
         'myuser': myuser,
     }
-
     return HttpResponse(template.render(context, request))
+
 
 def subjectDetails(request, subject):
     # Retrieve the CoreSubject instance for the given subject
