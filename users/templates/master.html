@@ -1,5 +1,4 @@
 {% load static %}
-<!DOCTYPE html>
 <html>
 <head>
   <title>{% block title %}{% endblock %}</title>
@@ -8,10 +7,8 @@
 <link rel="stylesheet" href="{% static 'myfirst.css' %}">
 <body>
 
-<nav class="topnav">
-      <div class="collapse navbar-collapse" id="navbar">
+<div class="topnav">
           <!-- Need to redo this page to create better user experience when logged on and not logged on-->
-        <div class="navbar-nav">
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           |
           <a class="nav-item nav-link" id="users" href="/users">Users</a>
@@ -28,8 +25,6 @@
           |
           <a class="nav-item nav-link" id="signup" href="/signup">Sign up</a>
         </div>
-      </div>
-    </nav>
 </div>
 
 {% block content %}
