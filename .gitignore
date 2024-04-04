@@ -1,1 +1,5 @@
 venv/
+**/__pycache__/
+educational_hub_group_project/__pycache__/
+educational_hub_group_project/__pycache__
+educational_hub_group_project/database.db
