@@ -4,6 +4,7 @@ from .models import Ticket
 from .models import CoreSubject
 from .models import Course
 
+
 class UserAdmin(admin.ModelAdmin):
     list_display = ("firstName", "lastName", "phone", "email",)
 

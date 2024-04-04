@@ -1,5 +1,4 @@
 #TO DO
-#Restrict Input files to respective catagories
 #Create, Read, Update, Delete without admin privliges/in regular website
 
 from django.db import models
@@ -16,14 +15,15 @@ class User(models.Model):
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
-    
+
+
 class Ticket(models.Model):
     user = models.ForeignKey(User, blank = True, null = True, on_delete = models.PROTECT)
     title = models.CharField("Title", max_length = 100)
     time_of_post = models.DateTimeField("Time of Post")
     post_description = models.CharField("Description", max_length = 500, null = True)
     pdf_file = models.FileField('PDF File', null = True, blank = True, validators=[FileExtensionValidator(allowed_extensions=['pdf', 'doc'])])
-    video_file = models.FileField('Video File', null = True, blank = True)
+    video_file = models.FileField('Video File', null = True, blank = True, validators=[FileExtensionValidator(allowed_extensions=['mp4'])])
     video_website_address = models.URLField('Video Adress', null = True, blank = True)
 
     def __str__(self):
